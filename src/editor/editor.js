@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Value } from "slate";
+import { Editor } from "slate-react";
+import {
+  renderMark,
+  setMark
+} from "./marks/marks.js";
 
-// Create our initial value...
 const initialValue = Value.fromJSON({
   document: {
     nodes: [
@@ -13,7 +17,7 @@ const initialValue = Value.fromJSON({
             object: 'text',
             leaves: [
               {
-                text: 'A line of text in a paragraph.',
+                text: 'Type it here.',
               },
             ],
           },
@@ -22,5 +26,41 @@ const initialValue = Value.fromJSON({
     ],
   },
 })
+export default class BlogEditor extends Component {
+  constructor() {
+    super();
+    this.state = {
+      value: initialValue,
+    }
 
-export default initialValue;
+    this.onChange = this.onChange.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
+  }
+
+  onChange({ value }) {
+    this.setState({ value });
+  }
+
+  onSave(event, value) {
+    event.preventDefault();
+    console.log(JSON.stringify(value))
+  }
+
+  onKeyDown(event, change) {
+    if (!event.metaKey) return;
+    if (event.key === 's') return this.onSave(event, change);
+    
+    return setMark(event, change);
+  }
+
+  render() {
+    return (
+      <Editor
+        value={this.state.value}
+        onChange={this.onChange}
+        onKeyDown={this.onKeyDown}
+        renderMark={this.renderMark}
+      />
+    );
+  }
+}

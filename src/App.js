@@ -1,59 +1,53 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Editor } from "slate-react";
-import initialValue from "./editor/editor.js";
+import './Atoms.css';
+import { Value } from "slate";
+import Post from "./post/post.js";
+import BlogEditor from "./editor/editor.js";
+import { initialValue } from "./editor/editor.js";
 import {
-  setMark,
   renderMark,
 } from "./editor/marks/marks.js";
 
-
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      value: initialValue,
-    }
-
-    this.onChange = this.onChange.bind(this);
-    this.onKeyDown = this.onKeyDown.bind(this);
-  }
-
-  onChange({ value }) {
-    this.setState({ value });
-  }
-
-  onSave(event, value) {
-    event.preventDefault();
-    console.log(JSON.stringify(value))
-  }
-
-  onKeyDown(event, change) {
-    if (!event.metaKey) return;
-    if (event.key === 's') return this.onSave(event, change);
-    
-    return setMark(event, change);
-  }
+// all of these hardcoded and imported posts and assets
+// should be replaced in the future with fetching from NGINX
+import testPost1 from "./assets/posts/test-post.js";
+import testPost2 from "./assets/posts/test-post-hormigas.js";
+import ctgSunset from "./assets/img/ctg-sunset-full.png"
+import ctgSunsetThumb from "./assets/img/ctg-sunset-thumb.png"
+const testPost1Rtf = Value.fromJSON(testPost1.value);
+const testPost2Rtf = Value.fromJSON(testPost2.value);
+export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+      <div className="app bgg-grey-300">
+        <header>
+          <h1 className="fontSize-24 bgg-grey-500 ccc-blue-200">Andy's witty blog title</h1>
         </header>
         <div className="content">
-          <Editor
-            value={this.state.value}
-            onChange={this.onChange}
-            onKeyDown={this.onKeyDown}
-            renderMark={renderMark}
-          />
+          <div className="content">
+            <Post
+              title="Medellin, CO"
+              post={testPost2Rtf}
+              renderMark={renderMark}
+            />
+            <Post
+              title="Medellin, CO"
+              post={testPost2Rtf}
+              renderMark={renderMark}
+            />
+            <Post
+              title="Medellin, CO"
+              post={testPost2Rtf}
+              renderMark={renderMark}
+            />
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default App;
+
