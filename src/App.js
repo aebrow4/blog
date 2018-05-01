@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link }  from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import './Atoms.css';
@@ -19,33 +20,71 @@ import ctgSunsetThumb from "./assets/img/ctg-sunset-thumb.png"
 const testPost1Rtf = Value.fromJSON(testPost1.value);
 const testPost2Rtf = Value.fromJSON(testPost2.value);
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.renderPost = this.renderPost.bind(this);
+  }
+  // TODO: get rid of this hardcoded content
+  static postMetaData = [{
+    title: "Medellin, CO",
+    post: testPost2Rtf,
+  }, {
+    title: "Medellin, CO",
+    post: testPost2Rtf,
+  }, {
+    title: "Medellin, CO",
+    post: testPost2Rtf,
+  }]
 
+  renderHome() {
+    return (
+      <div>
+        <Post
+          title="Medellin, CO"
+          post={testPost2Rtf}
+          renderMark={renderMark}
+          idx={0}
+        />
+        <Post
+          title="Medellin, CO"
+          post={testPost2Rtf}
+          renderMark={renderMark}
+          idx={1}
+        />
+        <Post
+          title="Medellin, CO"
+          post={testPost2Rtf}
+          renderMark={renderMark}
+          idx={2}
+        />
+      </div>
+    );
+  }
+  renderPost({ match }) {
+    const id = match.params.postId;
+    console.log(this.constructor.postMetaData[id])
+    return (
+      <Post
+        title={this.constructor.postMetaData[id].title}
+        post={this.constructor.postMetaData[id].post}
+        renderMark={renderMark}
+        idx={match.params.postId}
+      />
+    ) 
+  }
   render() {
     return (
-      <div className="app bgg-grey-300">
-        <header>
-          <h1 className="fontSize-24 bgg-grey-500 ccc-blue-200">Andy's witty blog title</h1>
-        </header>
-        <div className="content">
+      <Router>
+        <div className="app bgg-grey-300">
+          <header>
+            <h1 className="fontSize-24 bgg-grey-500 ccc-blue-200">Andy's witty blog title</h1>
+          </header>
           <div className="content">
-            <Post
-              title="Medellin, CO"
-              post={testPost2Rtf}
-              renderMark={renderMark}
-            />
-            <Post
-              title="Medellin, CO"
-              post={testPost2Rtf}
-              renderMark={renderMark}
-            />
-            <Post
-              title="Medellin, CO"
-              post={testPost2Rtf}
-              renderMark={renderMark}
-            />
+            <Route exact path='/' render={this.renderHome} />
+            <Route path='/posts/:postId' render={this.renderPost} />
           </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
