@@ -1,6 +1,13 @@
 body {
   background-color: #2e2e2e;
 }
+a {
+  color: #deb887;
+  text-decoration: none;
+}
+a:hover {
+  color: #a2d4ff;
+}
 .app {
   text-align: center;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -10,6 +17,7 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   color: #ffffff;
+  text-align: left;
 }
 .posts {
   text-align: left;

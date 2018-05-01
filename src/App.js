@@ -77,7 +77,7 @@ export default class App extends Component {
       <Router>
         <div className="app bgg-grey-300">
           <header>
-            <h1 className="fontSize-24 bgg-grey-500 ccc-blue-200">Andy's witty blog title</h1>
+            <h1 className="fontSize-24 bgg-grey-500 ccc-brown-300">Andy's witty blog title</h1>
           </header>
           <div className="content">
             <Route exact path='/' render={this.renderHome} />

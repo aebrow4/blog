@@ -10,7 +10,7 @@ import Photo from "../photo/photo.js";
 export default class Post extends Component {
   renderContent() {
     return (
-      <div className="lh-1p4 bgg-grey-400 ccc-brown-100">
+      <div className="pl1 pr1 lh-1p4 bgg-grey-400 ccc-brown-100">
         <Editor
           value={this.props.post}
           renderMark={this.props.renderMark}
@@ -25,8 +25,8 @@ export default class Post extends Component {
 
   render() {
     return (
-      <div className="pl1 pr1 mb2">
-        <div className="fontSize-40 weight-400 pb1 bgg-grey-400 ccc-brown-300"><Link to={`/posts/${this.props.idx}`}>{this.props.title}</Link></div>
+      <div className="mb2">
+        <div className="fontSize-40 weight-400 align-center pb1 bgg-grey-400 ccc-brown-300"><Link to={`/posts/${this.props.idx}`}>{this.props.title}</Link></div>
         {this.renderContent()}
         {this.renderPhotos()}
       </div>
