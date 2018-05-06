@@ -1,5 +1,5 @@
 FROM node:carbon
-WORKDIR /usr/src/app
+WORKDIR /root/blog
 
 COPY package*.json ./
 COPY src ./src
