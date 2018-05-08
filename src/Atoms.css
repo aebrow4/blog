@@ -2,24 +2,6 @@
   position: relative;
 }
 
-.imgContainerFull {
-  height: 1200px;
-  width: 1200px;
-  margin: 0 auto;
-  background-color: black;
-}
-
-.imgContainerHalf {
-  height: 600px;
-  width: 600px;
-  margin: 0 auto;
-  background-color: black;
-}
-
-.imgFull {
-  width: 100%;
-}
-
 .lh-1p4 {
   line-height: 1.4;
 }
@@ -34,6 +16,14 @@
 }
 .align-left {
   text-align: left;
+}
+
+.margin0auto {
+  margin: 0 auto;
+}
+
+.block {
+  display: block;
 }
 
 .p1 {
@@ -101,6 +91,9 @@
 .bgg-grey-100 {
   background-color: #8c8c8c;
 }
+.bgg-black {
+  background-color: #000000;
+}
 
 .ccc-brown-100 {
   color: #f5f5dc;
@@ -108,7 +101,6 @@
 .ccc-brown-300 {
   color: #deb887;
 }
-
 .ccc-blue-200 {
   color: #a2d4ff;
 }

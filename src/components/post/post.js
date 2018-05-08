@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Editor } from "slate-react";
 
-import Photo from "../photo/photo.js";
-
 // Presently it is not possible to include photos during the text-editing
 // part of creating a post.
 // The current implementation simply displays photos after the text of the post.
@@ -20,7 +18,7 @@ export default class Post extends Component {
   }
 
   renderPhotos() {
-    return this.props.photos.map(photo => <div><Photo url={photo} /></div>);
+    return this.props.photos;
   }
 
   render() {

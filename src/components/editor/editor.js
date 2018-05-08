@@ -4,7 +4,7 @@ import { Editor } from "slate-react";
 import {
   renderMark,
   setMark
-} from "./marks/marks.js";
+} from '../../marks/marks.js';
 
 const initialValue = Value.fromJSON({
   document: {
