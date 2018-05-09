@@ -17,8 +17,6 @@ export default class Photo extends Component {
           <img
             className='margin0auto block'
             src={this.props.url}
-            width={photoSizes[this.props.size].width}
-            height={photoSizes[this.props.size].height}
             alt={this.props.alt}
           />
       </div>
@@ -27,7 +25,6 @@ export default class Photo extends Component {
 }
 
 Photo.propTypes = {
-  size: PropTypes.oneOf([_1200x900, _600x600]).isRequired,
   url: PropTypes.string.isRequired,
   alt: PropTypes.string,
 };

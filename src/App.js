@@ -18,8 +18,10 @@ import testPost1 from "./assets/posts/test-post.js";
 import testPost2 from "./assets/posts/test-post-hormigas.js";
 import ctgSunset from "./assets/img/ctg-sunset-full.png"
 import ctgSunsetThumb from "./assets/img/ctg-sunset-thumb.png"
-import photoSalkantayLarge from './assets/img/salkantay-1200x900.png';
+import photoSalkantayLarge from './assets/img/salkantay-900x600.png';
 import photoSalkantayThumb from './assets/img/salkantay-100x100.png';
+import photoValleyLarge from './assets/img/vilcabamba-valley-1200x900.png'
+import photoValleyThumb from './assets/img/vilcabamba-valley-100x100.png'
 const testPost1Rtf = Value.fromJSON(testPost1.value);
 const testPost2Rtf = Value.fromJSON(testPost2.value);
 export default class App extends Component {
@@ -29,13 +31,13 @@ export default class App extends Component {
   }
   // TODO: get rid of this hardcoded content
   static postMetaData = [{
-    title: "Medellin, CO",
+    title: 'Medellin, CO',
     post: testPost2Rtf,
   }, {
-    title: "Medellin, CO",
+    title: 'Medellin, CO',
     post: testPost2Rtf,
   }, {
-    title: "Medellin, CO",
+    title: 'Medellin, CO',
     post: testPost2Rtf,
   }]
 
@@ -43,23 +45,19 @@ export default class App extends Component {
     return (
       <div>
         <Post
-          title="Medellin, CO"
+          title='Medellin, CO'
           post={testPost2Rtf}
           renderMark={renderMark}
           idx={0}
         />
         <Post
-          title="Medellin, CO"
-          post={testPost2Rtf}
+          title='Cordillera Vilcabamba, PE'
           renderMark={renderMark}
           photos={[
-            <Photo
-              url={photoSalkantayLarge}
-              size={_1200x900}
-              alt='sunset'
-            />
+            { url: photoSalkantayLarge, thumbUrl: photoSalkantayThumb, alt: 'Salkantay' },
+            { url: photoValleyLarge, thumbUrl: photoValleyThumb, alt: 'Vilcabamba' }
           ]}
-          idx={1}
+          idx={2}
         />
       </div>
     );

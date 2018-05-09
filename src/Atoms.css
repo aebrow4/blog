@@ -1,9 +1,30 @@
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
 }
 
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;	
+}
+
 .lh-1p4 {
   line-height: 1.4;
+}
+.font-size-1 {
+  font-size: 1rem;
+}
+.font-size-2 {
+  font-size: 2rem;
+}
+.font-size-3 {
+  font-size: 3rem;
 }
 .fontSize-40 {
   font-size: 40px;
@@ -25,6 +46,15 @@
 .block {
   display: block;
 }
+.inline-block {
+  display: inline-block;
+}
+.flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
 
 .p1 {
   padding: 1rem;
@@ -40,6 +70,21 @@
 }
 .pr1 {
   padding-right: 1rem;
+}
+.p2 {
+  padding: 2rem;
+}
+.pb2 {
+  padding-bottom: 2rem;
+}
+.pt2 {
+  padding-top: 2rem;
+}
+.pl2 {
+  padding-left: 2rem;
+}
+.pr2 {
+  padding-right: 2rem;
 }
 .m1 {
   margin: 1rem;
@@ -103,4 +148,10 @@
 }
 .ccc-blue-200 {
   color: #a2d4ff;
+}
+.hcc-blue-200:hover {
+  color: #a2d4ff;
+}
+.cursor-hand {
+  cursor: pointer;
 }
