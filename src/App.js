@@ -54,8 +54,17 @@ export default class App extends Component {
           title='Cordillera Vilcabamba, PE'
           renderMark={renderMark}
           photos={[
-            { url: photoSalkantayLarge, thumbUrl: photoSalkantayThumb, alt: 'Salkantay' },
-            { url: photoValleyLarge, thumbUrl: photoValleyThumb, alt: 'Vilcabamba' }
+            {
+              url: photoSalkantayLarge,
+              thumbUrl: photoSalkantayThumb,
+              caption: 'Nevado Salkantay, 6271m',
+              alt: 'Salkantay',
+            },
+            {
+              url: photoValleyLarge,
+              thumbUrl: photoValleyThumb,
+              caption: 'Near Soraypampa, ~4000m',
+              alt: 'Vilcabamba' }
           ]}
           idx={2}
         />

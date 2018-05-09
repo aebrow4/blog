@@ -17,6 +17,12 @@
 .lh-1p4 {
   line-height: 1.4;
 }
+.font-size-half {
+  font-size: .5rem;
+}
+.font-size-threequarter {
+  font-size: .75rem;
+}
 .font-size-1 {
   font-size: 1rem;
 }
@@ -117,6 +123,10 @@
   margin-right: 2rem;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .weight-400 {
   font-weight: 400;
 }
@@ -140,8 +150,14 @@
   background-color: #000000;
 }
 
+.ccc-white {
+  color: #ffffff;
+}
 .ccc-brown-100 {
   color: #f5f5dc;
+}
+.ccc-grey-400 {
+  color: #595959;	
 }
 .ccc-brown-300 {
   color: #deb887;

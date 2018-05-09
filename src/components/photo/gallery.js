@@ -6,13 +6,15 @@ import Carousel from './carousel.js';
 export default class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = { showCarousel: false };
+    this.state = {
+      showCarousel: false,
+    };
 
     this.handleOpenCarousel = this.handleOpenCarousel.bind(this);
     this.handleCloseCarousel = this.handleCloseCarousel.bind(this);
   }
-  handleOpenCarousel() {
-    this.setState({ showCarousel: true });
+  handleOpenCarousel(i) {
+    this.setState({ showCarousel: true, index: isNaN(i) ? 0 : i });
   }
 
   handleCloseCarousel() {
@@ -22,12 +24,15 @@ export default class Gallery extends Component {
   render() {
     return (
       <div className='bgg-grey-400 p1'>
-        {this.props.photos.map(photo => (
-          <div className='inline-block pr1 cursor-hand' onClick={this.handleOpenCarousel}>
+        {this.props.photos.map((photo, i) => (
+          <div
+            className='inline-block pr1 cursor-hand'
+            onClick={() => this.handleOpenCarousel(i)}
+            key={photo.url}
+          >
             <Photo
               url={photo.thumbUrl}
               alt={photo.alt}
-              key={photo.url}
             />
           </div>
         )).slice(0, 15)}
@@ -35,6 +40,7 @@ export default class Gallery extends Component {
       {this.state.showCarousel && (
         <Carousel
           photos={this.props.photos}
+          index={this.state.index}
           onClose={this.handleCloseCarousel}
         />
       )}

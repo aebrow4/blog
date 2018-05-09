@@ -19,6 +19,7 @@ export default class Photo extends Component {
             src={this.props.url}
             alt={this.props.alt}
           />
+          <div><p className='font-size-half align-center weight-400 ccc-white'>{this.props.caption}</p></div>
       </div>
     );
   }
