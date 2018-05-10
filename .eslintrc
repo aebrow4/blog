@@ -1,0 +1,56 @@
+{
+  "rules": {
+    "prettier/prettier": ["error", { "trailingComma": "es5" }],
+    "func-names": 0,
+    "no-return-assign": 0,
+    "react/prop-types": [0, { "customValidators": ["skipUndeclared"]}],
+    "jsx-a11y/aria-role": 0,
+    "react/jsx-no-bind": 0,
+    "react/prefer-stateless-function": 0,
+    "react/sort-comp": 1,
+    "no-underscore-dangle": 0,
+    "newline-per-chained-call": 0,
+    "prefer-arrow-callback": 1,
+    "no-undef": 1,
+    "import/no-unresolved": [
+      2,
+      }
+    ],
+    "no-console": ["error", { "allow": ["warn"] }]
+  },
+
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "phantomjs": true,
+    "jest": true,
+    "jasmine": true
+  },
+  "parser": "babel-eslint",
+
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "classes": true
+    }
+  },
+
+  "plugins": [
+    "react",
+    "import",
+    "prettier"
+  ],
+
+  "globals": {
+    "React": true,
+  },
+
+  "settings": {
+    "import/resolver": "webpack"
+  },
+
+  "extends": ["prettier"]
+}
