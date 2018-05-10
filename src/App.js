@@ -77,131 +77,126 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.renderPost = this.renderPost.bind(this);
+    this.renderHome = this.renderHome.bind(this);
 
     this.state = {lightbox: false};
   }
-  // TODO: get rid of this hardcoded content
-  static postMetaData = [
+
+  static postData = [
     {
       title: 'Medellin, CO',
       post: testPost2Rtf,
+      idx: 0,
     },
     {
-      title: 'Medellin, CO',
-      post: testPost2Rtf,
-    },
-    {
-      title: 'Medellin, CO',
-      post: testPost2Rtf,
+      title: 'Peru',
+      photos: [
+        new Image(img0, img0Thumb, 'Barranco, Lima', ''),
+        new Image(img1, img1Thumb, 'Barranco', ''),
+        // new Image(img1b, img1bThumb, 'Miraflores', ''),
+        new Image(
+          img2,
+          img2Thumb,
+          "Feeding time at JFK Park, AKA 'the cat park'. Hundreds of cats live in this downtown park.",
+          '',
+        ),
+        new Image(
+          img3,
+          img3Thumb,
+          'Name: Princesa. Age: 6 months. Interests: Playing, being cute, biting. Mostly biting.',
+          '',
+        ),
+        new Image(img4, img4Thumb, 'Huaraz', ''),
+        new Image(
+          img5,
+          img5Thumb,
+          "One of the 'low' peaks (about 5500m) of the Cordillera Blanca.",
+          '',
+        ),
+        new Image(img6, img6Thumb, 'Cordillera Blanca', ''),
+        new Image(img7, img7Thumb, 'Cusco', ''),
+        new Image(img8, img8Thumb, 'Baby Alpacas', ''),
+        new Image(
+          img9,
+          img9Thumb,
+          'A street cat making himself at home in a restaurant in Aguas Calientes',
+          '',
+        ),
+        new Image(
+          img10,
+          img10Thumb,
+          'Cordillera Vilcabamba. The beginning of the Salkantay trek to Machu Picchu',
+          '',
+        ),
+        new Image(img11, img11Thumb, 'Valley in the Cordillera Vilcabamba', ''),
+        new Image(
+          img12,
+          img12Thumb,
+          'Milleigh Vo descends from the high point of the trek, Salkantay pass (4630m). Salkantay in the background (6271m).',
+          '',
+        ),
+        new Image(img13, img13Thumb, 'Salkantay', ''),
+        new Image(
+          img14,
+          img14Thumb,
+          'Day three of the trek. A coffee stand and a few chickens perch on the side of the valley.',
+          '',
+        ),
+        new Image(
+          img15,
+          img15Thumb,
+          'Machu Picchu in the background: the leftmost peak, under the layer of clouds.',
+          '',
+        ),
+        new Image(
+          img16,
+          img16Thumb,
+          'Near Machu Picchu and Aguas Calientes',
+          '',
+        ),
+        new Image(img17, img17Thumb, 'Fog rising from Machu Picchu', ''),
+        new Image(img18, img18Thumb, 'Machu Picchu', ''),
+        new Image(img19, img19Thumb, 'Machu Picchu', ''),
+        new Image(
+          img20,
+          img20Thumb,
+          "The so-called 'face of the Inca' is visible here...the Inca has a big nose.",
+          '',
+        ),
+        new Image(img21, img21Thumb, 'Milleigh and friend', ''),
+      ],
+      idx: 1,
     },
   ];
 
   renderHome() {
     return (
       <div>
-        <Post
-          title="Medellin, CO"
-          post={testPost2Rtf}
-          renderMark={renderMark}
-          idx={0}
-        />
-        <Post
-          title="Peru"
-          renderMark={renderMark}
-          photos={[
-            new Image(img0, img0Thumb, 'Barranco, Lima', ''),
-            new Image(img1, img1Thumb, 'Barranco', ''),
-            // new Image(img1b, img1bThumb, 'Miraflores', ''),
-            new Image(
-              img2,
-              img2Thumb,
-              "Feeding time at JFK Park, AKA 'the cat park'. Hundreds of cats live in this downtown park.",
-              '',
-            ),
-            new Image(
-              img3,
-              img3Thumb,
-              'Name: Princesa. Age: 6 months. Interests: Playing, being cute, biting. Mostly biting.',
-              '',
-            ),
-            new Image(img4, img4Thumb, 'Huaraz', ''),
-            new Image(
-              img5,
-              img5Thumb,
-              "One of the 'low' peaks (about 5500m) of the Cordillera Blanca.",
-              '',
-            ),
-            new Image(img6, img6Thumb, 'Cordillera Blanca', ''),
-            new Image(img7, img7Thumb, 'Cusco', ''),
-            new Image(img8, img8Thumb, 'Baby Alpacas', ''),
-            new Image(
-              img9,
-              img9Thumb,
-              'A street cat making himself at home in a restaurant in Aguas Calientes',
-              '',
-            ),
-            new Image(
-              img10,
-              img10Thumb,
-              'Cordillera Vilcabamba. The beginning of the Salkantay trek to Machu Picchu',
-              '',
-            ),
-            new Image(
-              img11,
-              img11Thumb,
-              'Valley in the Cordillera Vilcabamba',
-              '',
-            ),
-            new Image(
-              img12,
-              img12Thumb,
-              'Milleigh Vo descends from the high point of the trek, Salkantay pass (4630m). Salkantay in the background (6271m).',
-              '',
-            ),
-            new Image(img13, img13Thumb, 'Salkantay', ''),
-            new Image(
-              img14,
-              img14Thumb,
-              'Day three of the trek. A coffee stand and a few chickens perch on the side of the valley.',
-              '',
-            ),
-            new Image(
-              img15,
-              img15Thumb,
-              'Machu Picchu in the background: the leftmost peak, under the layer of clouds.',
-              '',
-            ),
-            new Image(
-              img16,
-              img16Thumb,
-              'Near Machu Picchu and Aguas Calientes',
-              '',
-            ),
-            new Image(img17, img17Thumb, 'Fog rising from Machu Picchu', ''),
-            new Image(img18, img18Thumb, 'Machu Picchu', ''),
-            new Image(img19, img19Thumb, 'Machu Picchu', ''),
-            new Image(
-              img20,
-              img20Thumb,
-              "The so-called 'face of the Inca' is visible here...the Inca has a big nose.",
-              '',
-            ),
-            new Image(img21, img21Thumb, 'Milleigh and friend', ''),
-          ]}
-          idx={2}
-        />
+        {this.constructor.postData.map(post => (
+          <Post
+            title={post.title}
+            post={post.post}
+            photos={post.photos}
+            renderMark={renderMark}
+            idx={post.idx}
+            key={post.idx}
+          />
+        ))}
       </div>
     );
   }
   renderPost({match}) {
-    const id = match.params.postId;
-    return (
-      <Post
-        title={this.constructor.postMetaData[id].title}
-        post={this.constructor.postMetaData[id].post}
-        renderMark={renderMark}
-        idx={match.params.postId}
-      />
+    const id = Number(match.params.postId);
+    return this.constructor.postData.map(
+      post =>
+        post.idx === id && (
+          <Post
+            title={post.title}
+            post={post.post}
+            photos={post.photos}
+            idx={id}
+          />
+        ),
     );
   }
   render() {
@@ -217,8 +212,8 @@ export default class App extends Component {
             </h1>
           </header>
           <div className="content">
-            <Route exact path="/" render={this.renderHome} />
-            <Route path="/posts/:postId" render={this.renderPost} />
+            <Route exact path="/" render={this.renderHome} key={1}/>
+            <Route path="/posts/:postId" render={this.renderPost} key={2} />
           </div>
         </div>
       </Router>
