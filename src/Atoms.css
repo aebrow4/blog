@@ -45,6 +45,10 @@
   text-align: left;
 }
 
+.valign-bottom {
+  vertical-align: bottom;
+}
+
 .margin0auto {
   margin: 0 auto;
 }

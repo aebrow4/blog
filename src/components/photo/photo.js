@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { _1200x900, _600x600 } from '../../util/constants.js';
 import './photo.css';
 
-const photoSizes = {
-  medium: { height: '600px', width: '600px' },
-  large: { height: '900', width: '1200px' },
-}
 export default class Photo extends Component {
+  checkViewport() {
+    // is the viewport smaller than the dimensions of the image we are trying to render?
+    const viewPortHeight = window.innerHeight;
+    const viewPortWidth = window.innerWidth;
+  }
+
+  fitToViewport() {
+
+  }
 
   render() {
     return (

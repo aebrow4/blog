@@ -12,14 +12,20 @@ export default class Lightbox extends Component {
 
   componentDidMount() {
     window.addEventListener('keydown', this.onKeyPress)
+
+    window.scrollTo(0, 0);
+    // Hack to apply some CSS to the root element hiding overflow
+    document.body.className += ' lightbox';
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     window.removeEventListener('keydown', this.onKeyPress)
+    document.body.className = document.body.className.replace('lightbox', '')
   }
 
   onClose(e) {
     this.props.onClose();
+    window.dispatchEvent(new Event('closeLightbox'));
   }
 
   onKeyPress(e) {

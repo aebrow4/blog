@@ -32,7 +32,7 @@ export default class Carousel extends Component {
   handlePrevious() {
     const numPhotos = this.props.photos.length;
     // refactor this to be async
-    this.setState({ index: Math.abs(this.state.index - 1) % numPhotos });
+    this.setState({ index: (this.state.index + numPhotos - 1) % numPhotos });
   }
 
   onKeyPress(e) {
