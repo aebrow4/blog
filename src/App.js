@@ -89,7 +89,7 @@ export default class App extends Component {
 
   static postData = [
     {
-      title: 'Medellin, CO',
+      title: 'Medellin',
       post: testPost2Rtf,
       idx: 0,
     },
@@ -220,8 +220,8 @@ export default class App extends Component {
             this.state.lightbox ? 'lightbox' : ''
           }`}>
           <header>
-            <h1 className="fontSize-24 ccc-brown-300">
-              Andy's witty blog title
+            <h1 className="fontSize-24 ccc-brown-300 weight-400">
+              Andy's blog
             </h1>
           </header>
           <div className="content">

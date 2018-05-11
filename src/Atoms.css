@@ -158,13 +158,15 @@
   color: #ffffff;
 }
 .ccc-brown-100 {
-  color: #f5f5dc;
+  color: #efe9dd;
+  /* color: #f5f5dc; */
 }
 .ccc-grey-400 {
   color: #595959;	
 }
 .ccc-brown-300 {
-  color: #deb887;
+  /* color: #deb887; */
+  color: #c7ae86;
 }
 .ccc-blue-200 {
   color: #a2d4ff;
