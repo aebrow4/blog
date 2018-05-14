@@ -11,6 +11,7 @@ import {renderMark} from './marks/marks.js';
 // TODO: move content to nginx
 import PostPeru from './assets/posts/peru.js';
 import PostMedellin from './assets/posts/medellin.js';
+import PostColombia from './assets/posts/colombia.js';
 
 
 export default class App extends Component {
@@ -37,6 +38,7 @@ export default class App extends Component {
     return (
       <div>
         {PostMedellin}
+        {PostColombia}
         {PostPeru}
       </div>
     );
