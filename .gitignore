@@ -9,9 +9,6 @@
 # production
 /build
 
-# images
-/img-orig
-
 # misc
 .DS_Store
 .env.local
