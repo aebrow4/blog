@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import { Value } from 'slate';
+import React from 'react';
 import Post from '../../components/post/post.js';
 import { Image } from '../../util/classes.js';
 import {renderMark} from '../../marks/marks.js';
@@ -19,8 +18,6 @@ const photos = Object.entries(images.ar_1x1).map(([imageName, thumbnailUrl]) => 
   const fullSizeImgUrl = images.ar_4x3[imageName] || images.ar_25x9[imageName];
   return new Image(fullSizeImgUrl, thumbnailUrl)
 })
-console.log(images.ar_25x9)
-console.log(photos)
 export default (
   <Post
     title='Colombia'

@@ -177,3 +177,7 @@
 .cursor-hand {
   cursor: pointer;
 }
+
+.z10 {
+  z-index: 10;
+}

@@ -33,7 +33,7 @@ export default class Lightbox extends Component {
 
   render() {
     return (
-      <div className="absolute top0 left0 bgg-black margin0auto w100 h100 pt2" onClick={this.onClose}>
+      <div className="z10 absolute top0 left0 bgg-black margin0auto w100 h100 pt2" onClick={this.onClose}>
           {this.props.children}
       </div>
     )

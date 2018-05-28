@@ -147,7 +147,7 @@ export default (
     title='Peru'
     photos={photos}
     renderMark={renderMark}
-    idx={1}
+    idx={2}
   />
 );
 
