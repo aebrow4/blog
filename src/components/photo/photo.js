@@ -23,7 +23,7 @@ export default class Photo extends Component {
             src={this.props.url}
             alt={this.props.alt}
           />
-          <div><p className='font-size-half align-center weight-400 ccc-white'>{this.props.caption}</p></div>
+          {this.props.showCaption && <div><p className='font-size-threequarter align-center weight-400 ccc-white mr4 ml4'>{this.props.caption}</p></div>}
       </div>
     );
   }
@@ -32,4 +32,5 @@ export default class Photo extends Component {
 Photo.propTypes = {
   url: PropTypes.string.isRequired,
   alt: PropTypes.string,
+  showCaption: PropTypes.bool,
 };

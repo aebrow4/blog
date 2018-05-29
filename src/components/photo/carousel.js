@@ -60,6 +60,7 @@ export default class Carousel extends Component {
             key={photo.url}
             caption={photo.caption}
             onClick={this.handleNext}
+            showCaption
           />
         <div><p className='italic align-center ccc-grey-400 font-size-threequarter'>{'Use arrow keys to navigate'}</p></div>
         </div>

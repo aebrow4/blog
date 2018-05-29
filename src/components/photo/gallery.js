@@ -35,10 +35,10 @@ export default class Gallery extends Component {
 
   renderPreviewGallery() {
     return (
-      <div>
+      <div className="flex flex-row flex-wrap justify-around max-width1000">
         {this.props.photos.map((photo, i) => (
           <div
-            className='inline-block pr1 cursor-hand'
+            className='cursor-hand flex pr1 pthalf'
             onClick={() => this.handleOpenCarousel(i)}
             key={photo.url}
           >
@@ -48,7 +48,7 @@ export default class Gallery extends Component {
             />
           </div>
         )).slice(0, 15)}
-        <div className='inline-block'><span className='font-size-3 ccc-brown-300 hcc-blue-200 cursor-hand valign-bottom' onClick={this.handleShowFullGallery}>...</span></div>
+        <div className='cursor-hand flex pr1 w100px pthalf'><div className='margin0auto pthalf font-size-3 ccc-brown-300 hcc-blue-200 cursor-hand valign-bottom' onClick={this.handleShowFullGallery}>...</div></div>
       </div>
     )
   }
