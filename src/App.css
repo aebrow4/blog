@@ -1,26 +1,40 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 html, body {
-  background-color: #676767;
+  background-color: #FFFFFF;
+  /* grey-500, TODO make this color a var */
+  color: #50585D; 
 }
 a {
-  color: #c7ae86;
   text-decoration: none;
+  color: #50585D; 
 }
-a:hover {
-  color: #a2d4ff;
+ a:hover {
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 .app {
   text-align: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif
 }
 
 .content {
   max-width: 1000px;
   margin: 0 auto;
-  color: #ffffff;
   text-align: left;
 }
 .posts {
   text-align: left;
   margin: 1rem;
 }
-

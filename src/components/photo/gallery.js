@@ -35,7 +35,7 @@ export default class Gallery extends Component {
 
   renderPreviewGallery() {
     return (
-      <div className="flex flex-row flex-wrap justify-around max-width1000">
+      <div className="flex flex-row flex-wrap justify-around max-width">
         {this.props.photos.map((photo, i) => (
           <div
             className='cursor-hand flex pr1 pthalf'
@@ -74,7 +74,7 @@ export default class Gallery extends Component {
 
   render() {
     return (
-      <div className='bgg-grey-400 p1'>
+      <div className='p1 bgg-grey-100 bbb-brown-200'>
       {this.state.showFullGallery ? this.renderFullGallery() : this.renderPreviewGallery()}
       {this.state.showCarousel && (
         <Carousel

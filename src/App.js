@@ -71,13 +71,13 @@ export default class App extends Component {
     return (
       <Router>
         <div
-          className={`app bgg-grey-300 ${
+          className={`app ${
             this.state.lightbox ? 'lightbox' : ''
           }`}>
           <header>
-            <h1 className='fontSize-24 ccc-brown-300 weight-400'>
+            <h3 className='bgg-grey-100 mt0 bbb-brown-200 border-bottom'>
               <Link to='/'>Andy's blog</Link>
-            </h1>
+            </h3>
           </header>
           <div className='content'>
             <Route exact path='/' render={this.renderHome} key={1}/>
