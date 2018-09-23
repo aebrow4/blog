@@ -12,7 +12,7 @@ import {renderMark} from './marks/marks.js';
 
 import githubSvg from './assets/icon/github.svg';
 import linkedinSvg from './assets/icon/linkedin.svg';
-import andyPng from './assets/icon/andy2.png';
+import andyPng from './assets/icon/andy.png';
 
 // TODO: move content to nginx
 import PostPeru from './assets/posts/peru.js';
