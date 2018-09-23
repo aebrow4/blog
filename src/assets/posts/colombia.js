@@ -21,6 +21,7 @@ const photos = Object.entries(images.ar_1x1).map(([imageName, thumbnailUrl]) => 
 export default (
   <Post
     title='Colombia'
+    date='April 2018'
     renderMark={renderMark}
     photos={photos}
     idx={1}

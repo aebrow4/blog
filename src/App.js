@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import './css/App.css';
 import './css/Atoms.css';
 import {Value} from 'slate';
+import About from './components/about/about.js';
 import Post from './components/post/post.js';
 import BlogEditor, {initialValue} from './components/editor/editor.js';
 import Photo from './components/photo/photo.js';
@@ -53,6 +54,10 @@ export default class App extends Component {
     this.state = {lightbox: false};
   }
 
+  renderAbout() {
+    return <About />
+  }
+
   renderHome() {
     return (
       <div>
@@ -85,13 +90,13 @@ export default class App extends Component {
               <h1 className='family-opensans valign-top inline mr1 c-trueblack'>Listening</h1>
             </Link>
               </div>
-              <div className="">
-            <a href="#">
-              <img
-                src={andyPng}
-                className="icon-large ml1"
-              />
-            </a>
+             <div className="">
+                <Link to="/about">
+                  <img
+                    src={andyPng}
+                    className="icon-large ml1"
+                  />
+            </Link>
             <a href="https://www.github.com/aebrow4">
               <img
                 src={githubSvg}
@@ -109,6 +114,7 @@ export default class App extends Component {
           </header>
           <div className='content'>
             <Route exact path='/' render={this.renderHome} key={1}/>
+            <Route exact path='/about' render={this.renderAbout} key={1}/>
             <Route path='/posts/:postId' render={this.renderPost} key={2} />
           </div>
         </div>

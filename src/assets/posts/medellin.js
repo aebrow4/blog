@@ -14,6 +14,7 @@ const post = {"value":{"object":"value","document":{"object":"document","data":{
 export default (
   <Post
     title='Medellin'
+    date='April 2018'
     post={Value.fromJSON(post.value)}
     renderMark={renderMark}
     idx={0}

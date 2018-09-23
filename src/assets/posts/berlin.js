@@ -144,6 +144,7 @@ const photos = [
 export default (
   <Post
     title='Berlin'
+    date='May 2018'
     photos={photos}
     renderMark={renderMark}
     idx={3}
