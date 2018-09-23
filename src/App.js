@@ -75,7 +75,7 @@ export default class App extends Component {
             this.state.lightbox ? 'lightbox' : ''
           }`}>
           <header>
-            <h3 className='g-gray100 mt0 b-yellow900 border-bottom bs-solid bw-2'>
+            <h3 className='g-gray100 mt0 b-gray200 bs-solid bw-1 mb4'>
               <Link to='/'>Andy's blog</Link>
             </h3>
           </header>

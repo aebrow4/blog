@@ -15,16 +15,19 @@ a {
 h1 {
   font-size: 3rem;
   font-weight: 600;
+  margin: 0;
 }
 
 h2 {
   font-size: 2.5rem;
   font-weight: 600;
+  margin: 0;
 }
 
 h3 {
   font-size: 1.5rem;
   font-weight: 400;
+  margin: 0;
 }
 
 .content {

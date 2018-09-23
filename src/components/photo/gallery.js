@@ -38,7 +38,7 @@ export default class Gallery extends Component {
       <div className="flex flex-row flex-wrap justify-between">
         {this.props.photos.map((photo, i) => (
           <div
-            className='cursor-hand flex thumbnail'
+            className='cursor-hand flex w100 h100 o-hidden'
             onClick={() => this.handleOpenCarousel(i)}
             key={photo.url}
           >

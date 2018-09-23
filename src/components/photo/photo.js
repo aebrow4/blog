@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './photo.css';
 
 export default class Photo extends Component {
   checkViewport() {

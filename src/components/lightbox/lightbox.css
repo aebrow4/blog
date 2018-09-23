@@ -1,14 +1,6 @@
 .top0 {
   top: 0;
 }
-
 .left0 {
   left: 0;
-}
-
-.lightbox {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  top: -1rem;
 }

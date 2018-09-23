@@ -14,12 +14,14 @@ export default class Lightbox extends Component {
 
     window.scrollTo(0, 0);
     // Hack to apply some CSS to the root element hiding overflow
-    document.body.className += ' lightbox';
+    document.body.className += ' lightbox o-hidden relative';
   }
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.onKeyPress)
     document.body.className = document.body.className.replace('lightbox', '')
+    document.body.className = document.body.className.replace('o-hidden', '')
+    document.body.className = document.body.className.replace('relative', '')
   }
 
   onClose(e) {
@@ -33,7 +35,7 @@ export default class Lightbox extends Component {
 
   render() {
     return (
-      <div className="z10 absolute top0 left0 bgg-black m0a w-full h-full pt2" onClick={this.onClose}>
+      <div className="z10 absolute top0 left0 g-trueblack m0a w-full h-full pt2" onClick={this.onClose}>
           {this.props.children}
       </div>
     )

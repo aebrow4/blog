@@ -46,6 +46,7 @@
   
   --white: #FFF;
   --black: #1F323D;
+  --black-true: #000;
   
   --white-alpha-05: rgba(255,255,255,0.05);
   --white-alpha-10: rgba(255,255,255,0.1);
@@ -117,6 +118,7 @@
  
 .g-white { background-color: var(--white); } 
 .g-black { background-color: var(--black); } 
+.g-trueblack { background-color: var(--black-true); } 
  
 .b-blue100 { border-color: var(--blue-100); }
 .b-blue200 { border-color: var(--blue-200); }
