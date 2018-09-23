@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Link} from 'react-router-dom';
-import './App.css';
-import './Atoms.css';
+import './css/App.css';
+import './css/Atoms.css';
 import {Value} from 'slate';
 import Post from './components/post/post.js';
 import BlogEditor, {initialValue} from './components/editor/editor.js';
@@ -75,7 +75,7 @@ export default class App extends Component {
             this.state.lightbox ? 'lightbox' : ''
           }`}>
           <header>
-            <h3 className='bgg-grey-100 mt0 bbb-brown-200 border-bottom'>
+            <h3 className='g-gray100 mt0 b-yellow900 border-bottom bs-solid bw-2'>
               <Link to='/'>Andy's blog</Link>
             </h3>
           </header>

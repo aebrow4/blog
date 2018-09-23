@@ -23,7 +23,7 @@ export default class Photo extends Component {
             src={this.props.url}
             alt={this.props.alt}
           />
-          {this.props.showCaption && <div><p className='font-size-threequarter align-center weight-400 ccc-white mr4 ml4'>{this.props.caption}</p></div>}
+          {this.props.showCaption && <div><p className='font-size-threequarter align-center weight-400 c-white mr4 ml4'>{this.props.caption}</p></div>}
       </div>
     );
   }

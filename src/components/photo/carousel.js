@@ -62,7 +62,7 @@ export default class Carousel extends Component {
             onClick={this.handleNext}
             showCaption
           />
-        <div><p className='italic align-center ccc-grey-400 font-size-threequarter'>{'Use arrow keys to navigate'}</p></div>
+        <div><p className='italic align-center c-gray400 font-size-threequarter'>{'Use arrow keys to navigate'}</p></div>
         </div>
       </Lightbox>
     )

@@ -48,7 +48,7 @@ export default class Gallery extends Component {
             />
           </div>
         )).slice(0, 7)}
-        <div className='cursor-hand flex pr1 w100px pthalf'><div className='margin0auto pthalf font-size-3 ccc-brown-300 hcc-blue-200 cursor-hand valign-bottom' onClick={this.handleShowFullGallery}>...</div></div>
+        <div className='cursor-hand flex pr1 w100px pthalf'><div className='margin0auto pthalf font-size-3 c-brown-00 hc-blue200 cursor-hand valign-bottom' onClick={this.handleShowFullGallery}>...</div></div>
       </div>
     )
   }
@@ -74,7 +74,7 @@ export default class Gallery extends Component {
 
   render() {
     return (
-      <div className='pthalf pbhalf pr1 pl1 bgg-grey-100 bbb-brown-200'>
+      <div className='pthalf pbhalf pr1 pl1 g-gray100 b-yellow900 bs-solid bw-2'>
       {this.state.showFullGallery ? this.renderFullGallery() : this.renderPreviewGallery()}
       {this.state.showCarousel && (
         <Carousel
