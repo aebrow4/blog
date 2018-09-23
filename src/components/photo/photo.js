@@ -16,10 +16,10 @@ export default class Photo extends Component {
   render() {
     return (
       <div
-        className={`relative margin0auto bgg-black`}
+        className={`relative m0a bgg-black`}
       >
           <img
-            className='margin0auto block'
+            className='m0a block'
             src={this.props.url}
             alt={this.props.alt}
           />
