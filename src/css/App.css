@@ -1,12 +1,14 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+@import url(//fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i);
 html, body {
-  background-color: #FFFFFF;
-  /* grey-500, TODO make this color a var */
-  color: #50585D; 
+  background-color: var(--white);
+  color: var(--gray-900);
+  font-family: "Noto Serif", serif;
+  text-align: center;
 }
 a {
   text-decoration: none;
-  color: #50585D; 
+  color: var(--gray-900);
 }
  a:hover {
 }
@@ -23,10 +25,6 @@ h2 {
 h3 {
   font-size: 1.5rem;
   font-weight: 400;
-}
-.app {
-  text-align: center;
-  font-family: "Open Sans", sans-serif
 }
 
 .content {

@@ -35,10 +35,10 @@ export default class Gallery extends Component {
 
   renderPreviewGallery() {
     return (
-      <div className="flex flex-row flex-wrap justify-around">
+      <div className="flex flex-row flex-wrap justify-between">
         {this.props.photos.map((photo, i) => (
           <div
-            className='cursor-hand flex pr1 thumbnail'
+            className='cursor-hand flex thumbnail'
             onClick={() => this.handleOpenCarousel(i)}
             key={photo.url}
           >
@@ -48,7 +48,6 @@ export default class Gallery extends Component {
             />
           </div>
         )).slice(0, 7)}
-        <div className='cursor-hand flex pr1 w100px pthalf'><div className='m0a pthalf font-size-3 c-brown-00 hc-blue200 cursor-hand valign-bottom' onClick={this.handleShowFullGallery}>...</div></div>
       </div>
     )
   }
@@ -74,7 +73,7 @@ export default class Gallery extends Component {
 
   render() {
     return (
-      <div className='pthalf pbh pr1 pl1 g-gray100 b-yellow900 bs-solid bw-2'>
+      <div className='pt4 pb4 pr2 pl2 g-gray100 b-gray300 bs-solid bw-1'>
       {this.state.showFullGallery ? this.renderFullGallery() : this.renderPreviewGallery()}
       {this.state.showCarousel && (
         <Carousel

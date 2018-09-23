@@ -10,12 +10,12 @@ export default class Post extends Component {
     return (
       <div className="mb2">
         <div>
-          <h2>
-            <Link to={`/posts/${this.props.idx}`}>{this.props.title}</Link>
-          </h2>
+          <Link to={`/posts/${this.props.idx}`}>
+            <h2 className="family-opensans weight-700">{this.props.title}</h2>
+          </Link>
         </div>
         {this.props.post && (
-          <div className="pl1 pr1 lh-1p4">
+          <div className="lh-1p4">
             <Editor
               value={this.props.post}
               renderMark={this.props.renderMark}

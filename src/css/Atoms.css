@@ -4,7 +4,10 @@
 .w-full { width: 100%; }  
 .h-full { height: 100%; }  
 .max-width { max-width: 800px; }  
-.w100px { width: 100px; }  
+.w100 { width: 100px; }  
+.w200 { width: 200px; }  
+.h100 { height: 100px; }  
+.h200 { height: 200px; }  
 
 .m0a { margin: 0 auto; }  
 
@@ -25,8 +28,10 @@
 .font-size-3 { font-size: 3rem; }  
 .fontSize-40 { font-size: 40px; }  
 .fontSize-24 { font-size: 24px; }  
+.family-opensans { font-family: "Open Sans", sans-serif; }
 .italic { font-style: italic; }  
 .weight-400 { font-weight: 400; }  
+.weight-700 { font-weight: 700; }  
 .align-center { text-align: center; }  
 .align-left { text-align: left; }  
 .align-right { text-align: right; }  
@@ -83,8 +88,8 @@
 .z10 { z-index: 10; }  
  
 .thumbnail {
-  height: 70px;
-  width: 70px;
+  height: 100px;
+  width: 100px;
   overflow: hidden;
 }
 .border-bottom {
@@ -94,5 +99,6 @@
 }
 
 .bs-solid { border-style: solid; }
+.bw-1 { border-width: 1px; }
 .bw-2 { border-width: 2px; }
 
