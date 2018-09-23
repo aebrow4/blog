@@ -9,10 +9,16 @@
 .h100 { height: 100px; }  
 .h200 { height: 200px; }  
 
+.top0 { top: 0; }
+.right0 { right: 0; }
+.bottom0 { bottom: 0; }
+.left0 { left: 0; }
+
 .m0a { margin: 0 auto; }  
 
 .block { display: block; }     
 .inline-block { display: inline-block; }  
+.inline { display: inline; }  
 .flex { display: flex; }  
 
 .flex-row { flex-direction: row; }  
@@ -38,6 +44,7 @@
 .align-left { text-align: left; }  
 .align-right { text-align: right; }  
 .valign-bottom { vertical-align: bottom; }  
+.valign-top { vertical-align: top; }  
 .lh-1p4 { line-height: 1.4; }  
 
 .ph { padding: .5rem; }  
@@ -92,4 +99,39 @@
 .bs-solid { border-style: solid; }
 .bw-1 { border-width: 1px; }
 .bw-2 { border-width: 2px; }
+.bw-2 { border-width: 3px; }
+.b-top {
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+}
+.b-right {
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+.b-bottom {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+.b-left {
+  border-top: none;	
+  border-right: none;
+  border-bottom: none;
+}
 
+.icon {
+  position: relative;
+  height: 25px;  
+  width: 25px;  
+  border-radius: 12px;
+}
+
+.icon-large {
+  position: relative;
+  height: 40px;  
+  width: 40px;  
+  border-radius: 20px;
+  top: 4px;
+}

@@ -11,7 +11,7 @@ export default class Post extends Component {
       <div className="mb2">
         <div>
           <Link to={`/posts/${this.props.idx}`}>
-            <h2 className="family-opensans weight-700">{this.props.title}</h2>
+            <h2 className="family-opensans weight-700 pb1">{this.props.title}</h2>
           </Link>
         </div>
         {this.props.post && (

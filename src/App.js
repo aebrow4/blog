@@ -9,6 +9,10 @@ import BlogEditor, {initialValue} from './components/editor/editor.js';
 import Photo from './components/photo/photo.js';
 import {renderMark} from './marks/marks.js';
 
+import githubSvg from './assets/icon/github.svg';
+import linkedinSvg from './assets/icon/linkedin.svg';
+import andyPng from './assets/icon/andy2.png';
+
 // TODO: move content to nginx
 import PostPeru from './assets/posts/peru.js';
 import PostMedellin from './assets/posts/medellin.js';
@@ -74,10 +78,34 @@ export default class App extends Component {
           className={`app ${
             this.state.lightbox ? 'lightbox' : ''
           }`}>
-          <header>
-            <h3 className='g-gray100 mt0 b-gray200 bs-solid bw-1 mb4'>
-              <Link to='/'>Andy's blog</Link>
-            </h3>
+          <header className='g-gray100 mt0 b-purple700 bs-solid bw-3 pt1 pb1 mb4 b-top'>
+            <div className="content justify-between flex">
+              <div className="">
+            <Link to='/'>
+              <h1 className='family-opensans valign-top inline mr1 c-trueblack'>Listening</h1>
+            </Link>
+              </div>
+              <div className="">
+            <a href="#">
+              <img
+                src={andyPng}
+                className="icon-large ml1"
+              />
+            </a>
+            <a href="https://www.github.com/aebrow4">
+              <img
+                src={githubSvg}
+                className="icon-large ml1"
+              />
+            </a>
+            <a href="https://www.linkedin.com/in/andrewebrownaeb0">
+              <img
+                src={linkedinSvg}
+                className="icon-large ml1"
+              />
+            </a>
+              </div>
+            </div>
           </header>
           <div className='content'>
             <Route exact path='/' render={this.renderHome} key={1}/>

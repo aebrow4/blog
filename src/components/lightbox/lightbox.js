@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './lightbox.css';
 
 const ESCAPE = 27;
 export default class Lightbox extends Component {
@@ -35,8 +34,11 @@ export default class Lightbox extends Component {
 
   render() {
     return (
-      <div className="z10 absolute top0 left0 g-trueblack m0a w-full h-full pt2" onClick={this.onClose}>
-          {this.props.children}
+      <div
+        className="z10 absolute top0 left0 g-trueblack m0a w-full h-full pt2"
+        onClick={this.onClose}
+      >
+       {this.props.children}
       </div>
     )
   }

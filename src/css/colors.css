@@ -122,38 +122,38 @@
  
 .b-blue100 { border-color: var(--blue-100); }
 .b-blue200 { border-color: var(--blue-200); }
-.b-blue300 { border-color: var(--blue-400); }
-.b-blue400 { border-color: var(--blue-500); }
-.b-blue500 { border-color: var(--blue-700); }
-.b-blue600 { border-color: var(--blue-900); }
+.b-blue400 { border-color: var(--blue-400); }
+.b-blue500 { border-color: var(--blue-500); }
+.b-blue700 { border-color: var(--blue-700); }
+.b-blue900 { border-color: var(--blue-900); }
 
 .b-green100 { border-color: var(--green-100); }
 .b-green200 { border-color: var(--green-200); }
-.b-green300 { border-color: var(--green-400); }
-.b-green400 { border-color: var(--green-500); }
-.b-green500 { border-color: var(--green-700); }
-.b-green600 { border-color: var(--green-900); }
+.b-green400 { border-color: var(--green-400); }
+.b-green500 { border-color: var(--green-500); }
+.b-green700 { border-color: var(--green-700); }
+.b-green900 { border-color: var(--green-900); }
 
 .b-red100 { border-color: var(--red-100); }
 .b-red200 { border-color: var(--red-200); }
-.b-red300 { border-color: var(--red-400); }
-.b-red400 { border-color: var(--red-500); }
-.b-red500 { border-color: var(--red-700); }
-.b-red600 { border-color: var(--red-900); }
+.b-red400 { border-color: var(--red-400); }
+.b-red500 { border-color: var(--red-500); }
+.b-red700 { border-color: var(--red-700); }
+.b-red900 { border-color: var(--red-900); }
 
 .b-yellow100 { border-color: var(--yellow-100); }
 .b-yellow200 { border-color: var(--yellow-200); }
-.b-yellow300 { border-color: var(--yellow-400); }
-.b-yellow400 { border-color: var(--yellow-500); }
-.b-yellow500 { border-color: var(--yellow-700); }
-.b-yellow600 { border-color: var(--yellow-900); }
+.b-yellow400 { border-color: var(--yellow-400); }
+.b-yellow500 { border-color: var(--yellow-500); }
+.b-yellow700 { border-color: var(--yellow-700); }
+.b-yellow900 { border-color: var(--yellow-900); }
 
 .b-purple100 { border-color: var(--purple-100); }
 .b-purple200 { border-color: var(--purple-200); }
-.b-purple300 { border-color: var(--purple-400); }
-.b-purple400 { border-color: var(--purple-500); }
-.b-purple500 { border-color: var(--purple-700); }
-.b-purple600 { border-color: var(--purple-900); }
+.b-purple400 { border-color: var(--purple-400); }
+.b-purple500 { border-color: var(--purple-500); }
+.b-purple700 { border-color: var(--purple-700); }
+.b-purple900 { border-color: var(--purple-900); }
 
 .b-gray100 { border-color: var(--gray-100); }
 .b-gray200 { border-color: var(--gray-200); }
@@ -167,6 +167,7 @@
  
 .b-white { border-color: var(--white); } 
 .b-black { border-color: var(--black); } 
+.b-trueblack { border-color: var(--black-true); } 
 
 .c-blue100 { color: var(--blue-100); }
 .c-blue200 { color: var(--blue-200); }
@@ -215,6 +216,7 @@
 
 .c-white { color: var(--white); }
 .c-black { color: var(--black); }
+.c-trueblack { color: var(--black-true); }
 
 .hc-blue100:hover { color: var(--blue-100); }
 .hc-blue200:hover { color: var(--blue-200); }
