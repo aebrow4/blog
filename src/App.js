@@ -3,14 +3,11 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import './css/App.css';
 import './css/Atoms.css';
+import Header from './components/header/header.js';
 import About from './components/about/about.js';
 import Post from './components/post/post.js';
 import BlogEditor, {initialValue} from './components/editor/editor.js';
 import Photo from './components/photo/photo.js';
-
-import githubSvg from './assets/icon/github.svg';
-import linkedinSvg from './assets/icon/linkedin.svg';
-import andyPng from './assets/icon/andy.png';
 
 import postPeru from './assets/posts/peru.js';
 import postMedellin from './assets/posts/medellin.js';
@@ -76,28 +73,7 @@ export default class App extends Component {
     return (
       <Router>
         <div className={`app ${this.state.lightbox ? 'lightbox' : ''}`}>
-          <header className="g-gray100 mt0 b-purple700 bs-solid bw-3 pt1 pb1 mb4 b-top">
-            <div className="content justify-between flex">
-              <div className="">
-                <Link to="/">
-                  <h1 className="family-opensans valign-top inline mr1 c-trueblack">
-                    Listening
-                  </h1>
-                </Link>
-              </div>
-              <div className="">
-                <Link to="/about">
-                  <img src={andyPng} className="icon-large ml1" />
-                </Link>
-                <a href="https://www.github.com/aebrow4">
-                  <img src={githubSvg} className="icon-large ml1" />
-                </a>
-                <a href="https://www.linkedin.com/in/andrewebrownaeb0">
-                  <img src={linkedinSvg} className="icon-large ml1" />
-                </a>
-              </div>
-            </div>
-          </header>
+          <Header />
           <div className="content">
             <Route exact path="/" render={this.renderHome} key={0} />
             <Route exact path="/about" render={this.renderAbout} key={1} />
