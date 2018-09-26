@@ -16,7 +16,7 @@ export default class Post extends Component {
           <h3 className="c-black70 family-opensans pb1">{this.props.date}</h3>
         </div>
         {this.props.post && (
-          <div className="lh-1p4">
+          <div className="lh-1p5 g-gray100 b-gray300 bs-solid bw-1 p2">
             <Editor
               value={this.props.post}
               renderMark={this.props.renderMark}

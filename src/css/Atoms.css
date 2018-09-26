@@ -45,7 +45,10 @@
 .align-right { text-align: right; }  
 .valign-bottom { vertical-align: bottom; }  
 .valign-top { vertical-align: top; }  
+
+.lh-1p3 { line-height: 1.3; }  
 .lh-1p4 { line-height: 1.4; }  
+.lh-1p5 { line-height: 1.5; }  
 
 .ph { padding: .5rem; }  
 .p1 { padding: 1rem; }  
