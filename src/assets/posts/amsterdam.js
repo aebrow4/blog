@@ -1,7 +1,4 @@
-import React from 'react';
-import Post from '../../components/post/post.js';
 import { Image } from '../../util/classes.js';
-import {renderMark} from '../../marks/marks.js';
 
 import img1 from '../img/amsterdam/full/1.png';
 import img2 from '../img/amsterdam/full/2.png';
@@ -110,13 +107,10 @@ const photos = [
   new Image(img28, img28Thumb, '', ''),
   new Image(img29, img29Thumb, '', ''),
 ]
-export default (
-  <Post
-    title='Amsterdam'
-    date='May 2018'
-    photos={photos}
-    renderMark={renderMark}
-    idx={4}
-  />
-);
+export default {
+  idx: 4,
+  title:'Amsterdam',
+  date:'May 2018',
+  photos,
+};
 

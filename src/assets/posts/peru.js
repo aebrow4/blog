@@ -1,7 +1,4 @@
-import React, {Component} from 'react';
-import Post from '../../components/post/post.js';
 import { Image } from '../../util/classes.js';
-import {renderMark} from '../../marks/marks.js';
 
 // This file and all other posts should be moved from the app to nginx
 import img0 from '../img/salkantay/4-3/Lima1.png';
@@ -142,13 +139,10 @@ const photos = [
   new Image(img21, img21Thumb, 'Milleigh and friend', ''),
 ];
 
-export default (
-  <Post
-    title='Peru'
-    date='May 2018'
-    photos={photos}
-    renderMark={renderMark}
-    idx={2}
-  />
-);
+export default {
+  idx: 2,
+  title: 'Peru',
+  date: 'May 2018',
+  photos,
+};
 

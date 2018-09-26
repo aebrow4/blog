@@ -1,7 +1,4 @@
-import React from 'react';
-import Post from '../../components/post/post.js';
 import { Image } from '../../util/classes.js';
-import {renderMark} from '../../marks/marks.js';
 
 function importAll(r) {
   let images = {};
@@ -18,14 +15,12 @@ const photos = Object.entries(images.ar_1x1).map(([imageName, thumbnailUrl]) => 
   const fullSizeImgUrl = images.ar_4x3[imageName] || images.ar_25x9[imageName];
   return new Image(fullSizeImgUrl, thumbnailUrl)
 })
-export default (
-  <Post
-    title='Colombia'
-    date='April 2018'
-    renderMark={renderMark}
-    photos={photos}
-    idx={1}
-  />
-)
+
+export default {
+  idx: 1,
+  title: 'Colombia',
+  date: 'April 2018',
+  photos: photos,
+}
 
 
