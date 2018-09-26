@@ -6,12 +6,16 @@ html, body {
   font-family: "Noto Serif", serif;
   text-align: center;
 }
+
 a {
   text-decoration: none;
   color: var(--black);
 }
+
  a:hover {
+  color: var(--blue-500)
 }
+
 h1 {
   font-size: 3rem;
   line-height: 3rem;
