@@ -19,7 +19,7 @@ export default class Carousel extends Component {
     window.addEventListener('keydown', this.onKeyPress.bind(this));
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     window.removeEventListener('keydown', this.onKeyPress.bind(this));
   }
 
