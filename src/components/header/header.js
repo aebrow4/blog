@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import githubSvg from '../../assets/icon/github.svg';
-import linkedinSvg from '../../assets/icon/linkedin.svg';
-import andyPng from '../../assets/icon/andy.png';
+import { ASSET_HOST } from "../../config";
 
 export default class Header extends Component {
   render() {
@@ -18,13 +16,13 @@ export default class Header extends Component {
           </div>
           <div className="">
             <Link to="/about">
-              <img src={andyPng} className="icon-large ml1" />
+              <img src={`${ASSET_HOST}/assets/icon/andy.png`} className="icon-large ml1" />
             </Link>
             <a href="https://www.github.com/aebrow4">
-              <img src={githubSvg} className="icon-large ml1" />
+              <img src={`${ASSET_HOST}/assets/icon/github.svg`} className="icon-large ml1" />
             </a>
             <a href="https://www.linkedin.com/in/andrewebrownaeb0">
-              <img src={linkedinSvg} className="icon-large ml1" />
+              <img src={`${ASSET_HOST}/assets/icon/linkedin.svg`} className="icon-large ml1" />
             </a>
           </div>
         </div>
