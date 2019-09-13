@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './css/index.css';
 import './css/colors.css';
 import App from './App';
+import AppEditor from './app-editor';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Blog = process.env.REACT_APP_MODE !== 'editor' ? App : AppEditor;
+ReactDOM.render(<Blog />, document.getElementById('root'));
 registerServiceWorker();
