@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './css/App.css';
 import './css/Atoms.css';
 import Header from './components/header/header.js';
-import BlogEditor, {initialValue} from './components/editor/editor.js';
+import BlogEditor from './components/editor/editor.js';
 
 export default class AppEditor extends Component {
   render() {
@@ -19,4 +19,3 @@ export default class AppEditor extends Component {
     );
   }
 }
-

@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import { ASSET_HOST } from "../../config";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { ASSET_HOST } from '../../config';
 
 export default class Header extends Component {
   render() {
@@ -16,13 +16,25 @@ export default class Header extends Component {
           </div>
           <div className="">
             <Link to="/about">
-              <img src={`${ASSET_HOST}/assets/icon/andy.png`} className="icon-large ml1" />
+              <img
+                alt="about"
+                src={`${ASSET_HOST}/assets/icon/andy.png`}
+                className="icon-large ml1"
+              />
             </Link>
             <a href="https://www.github.com/aebrow4">
-              <img src={`${ASSET_HOST}/assets/icon/github.svg`} className="icon-large ml1" />
+              <img
+                alt="github"
+                src={`${ASSET_HOST}/assets/icon/github.svg`}
+                className="icon-large ml1"
+              />
             </a>
             <a href="https://www.linkedin.com/in/andrewebrownaeb0">
-              <img src={`${ASSET_HOST}/assets/icon/linkedin.svg`} className="icon-large ml1" />
+              <img
+                alt="linkedin"
+                src={`${ASSET_HOST}/assets/icon/linkedin.svg`}
+                className="icon-large ml1"
+              />
             </a>
           </div>
         </div>
@@ -30,4 +42,3 @@ export default class Header extends Component {
     );
   }
 }
-
