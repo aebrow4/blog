@@ -6,3 +6,10 @@ export function truncatePost(post) {
   return truncatedPost;
 }
 
+export function postIdFromTitle(postTitle) {
+  return postTitle.replace(' ', '-').trim().toLowerCase();
+}
+
+export function addMetadataToPostMarkup(markup, metadata) {
+  return { ...markup, ...metadata };
+}

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Link} from 'react-router-dom';
+import { Value } from "slate";
+import { ASSET_HOST } from "./config";
 import './css/App.css';
 import './css/Atoms.css';
 import Header from './components/header/header.js';
@@ -8,17 +10,41 @@ import About from './components/about/about.js';
 import Post from './components/post/post.js';
 import BlogEditor, {initialValue} from './components/editor/editor.js';
 import Photo from './components/photo/photo.js';
+import { truncatePost, postIdFromTitle } from './util';
 
+// Store the relative paths of the JSON blog posts
+const POSTS = [
+  'cathedral-peak.json'
+];
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.renderPost = this.renderPost.bind(this);
     this.renderHome = this.renderHome.bind(this);
 
-    this.postData = [
-    ];
+    this.state = { posts: [] };
+  }
 
-    this.state = {lightbox: false};
+  componentDidMount() {
+    this.fetchPosts()
+  }
+
+  fetchPosts() {
+    const promises = POSTS.map(path => fetch(`${ASSET_HOST}/assets/post/${path}`));
+    Promise.all(promises)
+      .then(data => {
+        return Promise.all(data.map(d => d.json()))
+      })
+      .then(json => {
+        const posts = json.map(j => ({
+          title: j.title,
+          id: postIdFromTitle(j.title),
+          date: j.date,
+          post: Value.fromJSON(j.value),
+          summaryPost: Value.fromJSON(truncatePost(j.value)),
+        }));
+        this.setState({ posts });
+      })
   }
 
   renderAbout() {
@@ -28,32 +54,35 @@ export default class App extends Component {
   renderHome() {
     return (
       <div>
-        {this.postData.map(post => (
+        {this.state.posts.map(post => (
           <Post
             title={post.title}
             date={post.date}
             summaryPost={post.summaryPost}
             photos={post.photos}
             summaryView
-            idx={post.idx}
-            key={post.idx}
+            readOnly
+            id={post.id}
+            key={post.id}
           />
         ))}
       </div>
     );
   }
+
   renderPost({match}) {
-    const id = Number(match.params.postId);
-    return this.postData.map(
+    const id = match.params.postId;
+    return this.state.posts.map(
       post =>
-        post.idx === id && (
+        post.id === id && (
           <Post
             title={post.title}
             date={post.date}
             post={post.post}
             photos={post.photos}
-            idx={post.idx}
-            key={post.idx}
+            id={post.id}
+            key={post.id}
+            readOnly
           />
         ),
     );
