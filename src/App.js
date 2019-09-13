@@ -9,12 +9,6 @@ import Post from './components/post/post.js';
 import BlogEditor, {initialValue} from './components/editor/editor.js';
 import Photo from './components/photo/photo.js';
 
-import postPeru from './assets/posts/peru.js';
-import postMedellin from './assets/posts/medellin.js';
-import postColombia from './assets/posts/colombia.js';
-import postBerlin from './assets/posts/berlin.js';
-import postAmsterdam from './assets/posts/amsterdam.js';
-
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -22,11 +16,6 @@ export default class App extends Component {
     this.renderHome = this.renderHome.bind(this);
 
     this.postData = [
-      postAmsterdam,
-      postBerlin,
-      postPeru,
-      postColombia,
-      postMedellin,
     ];
 
     this.state = {lightbox: false};
