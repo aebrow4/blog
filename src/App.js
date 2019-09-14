@@ -37,8 +37,8 @@ export default class App extends Component {
           title: j.title,
           id: postIdFromTitle(j.title),
           date: j.date,
-          post: Value.fromJSON(j.value),
-          summaryPost: Value.fromJSON(truncatePost(j.value)),
+          post: Value.fromJSON(j),
+          summaryPost: Value.fromJSON(truncatePost(j)),
         }));
         this.setState({ posts });
       });

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Value } from 'slate';
 import { Editor } from 'slate-react';
 import { addMetadataToPostMarkup } from '../../util';
-import { setMark } from '../../marks/marks.js';
+import { renderMark, setMark } from '../../marks/marks.js';
 
 const initialValue = Value.fromJSON({
   document: {
@@ -13,11 +13,7 @@ const initialValue = Value.fromJSON({
         nodes: [
           {
             object: 'text',
-            leaves: [
-              {
-                text: 'Type it here.',
-              },
-            ],
+            text: 'Type it here.',
           },
         ],
       },
@@ -47,19 +43,19 @@ export default class BlogEditor extends Component {
 
   onSave(event, post) {
     event.preventDefault();
-    post = addMetadataToPostMarkup(post, {
+    const jsonPost = post.toJSON();
+    const postWithMetadata = addMetadataToPostMarkup(jsonPost, {
       title: this.state.title,
       date: this.state.date,
     });
-    console.log(JSON.stringify(post));
+    console.log(JSON.stringify(postWithMetadata));
   }
 
-  onKeyDown(event, change) {
+  onKeyDown(event, editor, next) {
     if (!event.metaKey) return;
     if (event.key === 'Enter' || event.key === 's')
-      return this.onSave(event, change);
-
-    return setMark(event, change);
+      return this.onSave(event, this.state.post);
+    return setMark(event, editor, next);
   }
 
   render() {
@@ -75,7 +71,7 @@ export default class BlogEditor extends Component {
           value={this.state.post}
           onChange={this.onPostChange}
           onKeyDown={this.onKeyDown}
-          renderMark={this.renderMark}
+          renderMark={renderMark}
         />
       </div>
     );
