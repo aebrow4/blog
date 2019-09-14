@@ -1,21 +1,16 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {Link} from 'react-router-dom';
-import { Value } from "slate";
-import { ASSET_HOST } from "./config";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Value } from 'slate';
+import { ASSET_HOST } from './config';
 import './css/App.css';
 import './css/Atoms.css';
 import Header from './components/header/header.js';
 import About from './components/about/about.js';
 import Post from './components/post/post.js';
-import BlogEditor, {initialValue} from './components/editor/editor.js';
-import Photo from './components/photo/photo.js';
 import { truncatePost, postIdFromTitle } from './util';
 
 // Store the relative paths of the JSON blog posts
-const POSTS = [
-  'cathedral-peak.json'
-];
+const POSTS = ['cathedral-peak.json'];
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -26,14 +21,16 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchPosts()
+    this.fetchPosts();
   }
 
   fetchPosts() {
-    const promises = POSTS.map(path => fetch(`${ASSET_HOST}/assets/post/${path}`));
+    const promises = POSTS.map(path =>
+      fetch(`${ASSET_HOST}/assets/post/${path}`)
+    );
     Promise.all(promises)
       .then(data => {
-        return Promise.all(data.map(d => d.json()))
+        return Promise.all(data.map(d => d.json()));
       })
       .then(json => {
         const posts = json.map(j => ({
@@ -44,7 +41,7 @@ export default class App extends Component {
           summaryPost: Value.fromJSON(truncatePost(j.value)),
         }));
         this.setState({ posts });
-      })
+      });
   }
 
   renderAbout() {
@@ -70,7 +67,7 @@ export default class App extends Component {
     );
   }
 
-  renderPost({match}) {
+  renderPost({ match }) {
     const id = match.params.postId;
     return this.state.posts.map(
       post =>
@@ -84,7 +81,7 @@ export default class App extends Component {
             key={post.id}
             readOnly
           />
-        ),
+        )
     );
   }
   render() {

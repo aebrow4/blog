@@ -6,4 +6,3 @@ export class Image {
     this.alt = alt;
   }
 }
-

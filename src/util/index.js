@@ -7,7 +7,10 @@ export function truncatePost(post) {
 }
 
 export function postIdFromTitle(postTitle) {
-  return postTitle.replace(' ', '-').trim().toLowerCase();
+  return postTitle
+    .replace(' ', '-')
+    .trim()
+    .toLowerCase();
 }
 
 export function addMetadataToPostMarkup(markup, metadata) {

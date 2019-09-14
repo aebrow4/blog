@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Photo from './photo.js';
 import Lightbox from '../lightbox/lightbox.js';
 
-
 const RIGHT_ARROW = 39;
 const LEFT_ARROW = 37;
 export default class Carousel extends Component {
@@ -14,7 +13,7 @@ export default class Carousel extends Component {
     this.handleNext = this.handleNext.bind(this);
     this.handlePrevious = this.handlePrevious.bind(this);
   }
-  
+
   componentDidMount() {
     window.addEventListener('keydown', this.onKeyPress.bind(this));
   }
@@ -36,7 +35,7 @@ export default class Carousel extends Component {
   }
 
   onKeyPress(e) {
-    switch(e.keyCode) {
+    switch (e.keyCode) {
       case RIGHT_ARROW: {
         this.handleNext();
         break;
@@ -45,7 +44,8 @@ export default class Carousel extends Component {
         this.handlePrevious();
         break;
       }
-      default: return null;
+      default:
+        return null;
     }
   }
 
@@ -53,7 +53,7 @@ export default class Carousel extends Component {
     const photo = this.props.photos[this.state.index];
     return (
       <Lightbox onClose={this.props.onClose}>
-        <div className='bgg-black'>
+        <div className="bgg-black">
           <Photo
             url={photo.url}
             alt={photo.alt}
@@ -62,10 +62,14 @@ export default class Carousel extends Component {
             onClick={this.handleNext}
             showCaption
           />
-        <div><p className='italic align-center c-gray400 font-size-threequarter'>{'Use arrow keys to navigate'}</p></div>
+          <div>
+            <p className="italic align-center c-gray400 font-size-threequarter">
+              {'Use arrow keys to navigate'}
+            </p>
+          </div>
         </div>
       </Lightbox>
-    )
+    );
   }
 }
 

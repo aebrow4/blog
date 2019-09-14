@@ -9,7 +9,7 @@ export default class Lightbox extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('keydown', this.onKeyPress)
+    window.addEventListener('keydown', this.onKeyPress);
 
     window.scrollTo(0, 0);
     // Hack to apply some CSS to the root element hiding overflow
@@ -17,10 +17,10 @@ export default class Lightbox extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.onKeyPress)
-    document.body.className = document.body.className.replace('lightbox', '')
-    document.body.className = document.body.className.replace('o-hidden', '')
-    document.body.className = document.body.className.replace('relative', '')
+    window.removeEventListener('keydown', this.onKeyPress);
+    document.body.className = document.body.className.replace('lightbox', '');
+    document.body.className = document.body.className.replace('o-hidden', '');
+    document.body.className = document.body.className.replace('relative', '');
   }
 
   onClose(e) {
@@ -38,9 +38,8 @@ export default class Lightbox extends Component {
         className="z10 absolute top0 left0 g-trueblack m0a w-full h-full pt2"
         onClick={this.onClose}
       >
-       {this.props.children}
+        {this.props.children}
       </div>
-    )
+    );
   }
 }
-
