@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 export default class Photo extends Component {
   render() {
     return (
-      <div className={`relative m0a bgg-black`}>
+      <div className={`${this.props.absolute ? "absolute" : "relative"} m0a bgg-black`}>
         <img className="m0a block" src={this.props.url} alt={this.props.alt} />
-        {this.props.showCaption && (
+        {this.props.caption && (
           <div>
             <p className="font-size-threequarter align-center weight-400 c-white mr4 ml4">
               {this.props.caption}
@@ -21,5 +21,6 @@ export default class Photo extends Component {
 Photo.propTypes = {
   url: PropTypes.string.isRequired,
   alt: PropTypes.string,
-  showCaption: PropTypes.bool,
+  caption: PropTypes.string,
+  absolute: PropTypes.bool,
 };

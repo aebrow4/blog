@@ -1,41 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import ImageMark from './ImageMark';
 
 const BOLD = 'BOLD';
 const BoldMark = props => {
   return <strong>{props.children}</strong>;
 };
-const setBoldMark = (event, change) => {
-  event.preventDefault();
-  change.toggleMark(BOLD);
-  return true;
-};
-
 const ITALIC = 'ITALIC';
 const ItalicMark = props => {
   return <em>{props.children}</em>;
 };
-const setItalicMark = (event, change) => {
+const IMAGE = 'IMAGE';
+
+const _setMark = (mark, event, editor) => {
   event.preventDefault();
-  change.toggleMark(ITALIC);
+  editor.toggleMark(mark);
   return true;
 };
 
-export const setMark = (event, change) => {
-  // eslint-disable-next-line default-case
+const setImageMark = (event, editor, href, caption) => {
+  event.preventDefault();
+  editor.toggleMark({ type: IMAGE, data: { href, caption } });
+};
+
+export const setMark = (event, editor, next) => {
   switch (event.key) {
     case 'b': {
-      setBoldMark(event, change);
-      break
+      _setMark(BOLD, event, editor);
+      break;
     }
     case 'i': {
-      setItalicMark(event, change);
-      break
+      _setMark(ITALIC, event, editor);
+      break;
     }
+    case 'l': {
+      const href = window.prompt('href');
+      const caption = window.prompt('caption');
+      setImageMark(event, editor, href, caption);
+      break;
+    }
+    default:
+      return next();
   }
 };
 
-export const renderMark = props => {
-  // eslint-disable-next-line default-case
+export const renderMark = (props, editor, next) => {
   switch (props.mark.type) {
     case BOLD: {
       return <BoldMark {...props} />;
@@ -43,5 +52,12 @@ export const renderMark = props => {
     case ITALIC: {
       return <ItalicMark {...props} />;
     }
+    case IMAGE: {
+      const href = props.mark.data.get('href');
+      const caption = props.mark.data.get('caption');
+      return <ImageMark href={href} caption={caption} {...props} />;
+    }
+    default:
+      return next();
   }
 };
