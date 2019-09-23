@@ -9,7 +9,8 @@ html, body {
 
 a {
   text-decoration: none;
-  color: var(--black);
+  font-weight: 400;
+  color: var(--purple-700);
 }
 
  a:hover {
