@@ -18,7 +18,7 @@ export default class Header extends Component {
             <Link to="/about">
               <img
                 alt="about"
-                src={`${ASSET_HOST}/assets/icon/andy.png`}
+                src={`${ASSET_HOST}/assets/icon/andy.jpg`}
                 className="icon-large ml1"
               />
             </Link>

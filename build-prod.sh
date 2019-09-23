@@ -3,10 +3,7 @@
 function deploynginx() {
   npm install
   npm run build
-  rm -rf /var/www/blog
-  mkdir /var/www/blog
-  cp ~/blog/build/index.html /var/www/blog
-  cp -r ~/blog/build/static /var/www/blog/static
+  cp -r ~/blog/build/* /usr/share/nginx/html
 }
 
 function deploynginx-docker() {
@@ -17,13 +14,7 @@ function deploynginx-docker() {
 }
 
 function main() {
-  cd
-  rm -rf blog
-  git clone https://github.com/aebrow4/blog.git
-  cd blog
-
-  deploynginx-docker
-  # or deploynginx
+  deploynginx
 }
 
 main

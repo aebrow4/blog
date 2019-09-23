@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import Lightbox from "../lightbox/lightbox";
 
-const MED_IMG_SUFFIX = '-400.jpg'
-const LG_IMG_SUFFIX = '-1000.jpg'
-const MED_IMG = "MED";
-const LG_IMG = "LG";
+const MED_IMG = "med";
+const LG_IMG = "lg";
+const MED_IMG_SUFFIX = `-${MED_IMG}.jpg`
+const LG_IMG_SUFFIX = `-${LG_IMG}.jpg`
 
 export default class Photo extends Component {
   constructor(props) {
@@ -25,8 +25,8 @@ export default class Photo extends Component {
     const { url, caption, alt, cycleImageSize } = this.props;
     const src = `${url}${MED_IMG_SUFFIX}`;
     return (
-      <div className={"absolute m0a bgg-black z10 "} style={{top: "2rem", border: "4 px solid black"}} onClick={cycleImageSize}>
-        <img className="m0a block" src={src} alt={alt} />
+      <div className={"absolute m0a bgg-black z10"} style={{top: "-20rem", left: "4rem" }} onClick={cycleImageSize}>
+        <img className="m0a block" src={src} alt={alt} style={{border: "4px solid black"}}/>
       </div>
     );
   }
@@ -39,7 +39,7 @@ export default class Photo extends Component {
         onClose={cycleImageSize}
       >
         <div className={"m0a bgg-black"}>
-          <img className="m0a block" src={src} alt={alt} />
+          <img className="m0a block" src={src} alt={alt} style={{maxHeight: "90vh"}}/>
           {caption && (
             <div>
               <p className="font-size-threequarter align-center weight-400 c-white mr4 ml4">
