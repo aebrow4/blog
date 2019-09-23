@@ -10,7 +10,7 @@ import Post from './components/post/post.js';
 import { truncatePost, postIdFromTitle } from './util';
 
 // Store the relative paths of the JSON blog posts
-const POSTS = ['cathedral-peak.json'];
+const POSTS = ['grand-teton.json', 'cathedral-peak.json', 'lone-pine.json'];
 export default class App extends Component {
   constructor(props) {
     super(props);

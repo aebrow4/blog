@@ -3,27 +3,34 @@ import React, { Component } from 'react';
 import Photo from '../components/photo/photo';
 import { ASSET_HOST } from '../config';
 
-const MED_IMG = "MED";
-const LG_IMG = "LG";
+const MED_IMG = 'med';
+const LG_IMG = 'lg';
 
 export default class ImageMark extends Component {
   constructor() {
     super();
-    this.state = { renderImage: false, lastTouch: new Date(), imageSize: MED_IMG };
+    this.state = {
+      renderImage: false,
+      lastTouch: new Date(),
+      imageSize: MED_IMG,
+    };
 
     this.toggleImageSize = this.toggleImageSize.bind(this);
   }
 
   toggleImageSize(e) {
-    e && e.preventDefault()
+    e && e.preventDefault();
     const { imageSize } = this.state;
     if (imageSize === MED_IMG) {
-      this.setState({ renderImage: true, imageSize: LG_IMG })
+      this.setState({
+        renderImage: true,
+        imageSize: LG_IMG,
+        pageYOffset: window.pageYOffset,
+      });
     } else if (imageSize === LG_IMG) {
       this.setState({ renderImage: false, imageSize: MED_IMG }, () => {
-        // scroll window back to where this mark was
+        window.scrollTo(0, this.state.pageYOffset);
       });
-    } else {
     }
   }
 
