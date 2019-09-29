@@ -31,11 +31,11 @@ export default class Post extends Component {
       <div className="mb2">
         <div>
           <Link to={`/posts/${this.props.id}`}>
-            <h2 className="family-opensans weight-700 pbh">
+            <h2 className="family-opensans weight-700">
               {this.props.title}
             </h2>
           </Link>
-          <h3 className="c-black70 family-opensans pb1">{this.props.date}</h3>
+          <h3 className="c-black70 family-opensans p1">{this.props.date}</h3>
         </div>
         {(this.props.post || this.props.summaryPost) && (
           <div className="lh-1p5 g-gray100 b-gray300 bs-solid bw-1 p2">

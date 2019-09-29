@@ -14,7 +14,7 @@ a {
 }
 
  a:hover {
-  color: var(--blue-500)
+  color: var(--blue-500);
 }
 
 h1 {

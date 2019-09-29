@@ -9,10 +9,6 @@ const MED_IMG_SUFFIX = `-${MED_IMG}.jpg`
 const LG_IMG_SUFFIX = `-${LG_IMG}.jpg`
 
 export default class Photo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   onClick() {
     this.setState({ imageSize: LG_IMG })
   }
@@ -22,7 +18,7 @@ export default class Photo extends Component {
   }
 
   renderPreview() {
-    const { url, caption, alt, cycleImageSize } = this.props;
+    const { url, alt, cycleImageSize } = this.props;
     const src = `${url}${MED_IMG_SUFFIX}`;
     return (
       <div className={"absolute m0a bgg-black z10"} style={{top: "-20rem", left: "4rem" }} onClick={cycleImageSize}>
