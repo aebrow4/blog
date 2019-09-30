@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Photo from '../components/photo/photo';
-import { ASSET_HOST } from '../config';
 
 const MED_IMG = 'med';
 const LG_IMG = 'lg';
@@ -35,9 +34,10 @@ export default class ImageMark extends Component {
   }
 
   renderImage() {
+    const { ASSET_HOST } = window.app.config;
     return (
       <Photo
-        url={`${ASSET_HOST}/${this.props.href}`}
+        url={`${ASSET_HOST}${this.props.href}`}
         caption={this.props.caption}
         imageSize={this.state.imageSize}
         cycleImageSize={this.toggleImageSize}

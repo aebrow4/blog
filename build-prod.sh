@@ -3,7 +3,7 @@
 function deploynginx() {
   npm install
   npm run build
-  cp -r ~/blog/build/* /usr/share/nginx/html
+  cp -r build/* /usr/share/nginx/html
 }
 
 function deploynginx-docker() {

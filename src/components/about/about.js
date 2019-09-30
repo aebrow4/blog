@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { ASSET_HOST } from '../../config';
-
 export default function About(props) {
+  const { ASSET_HOST } = window.app.config;
   return (
     <div>
       <h3>About</h3>
       <div>
         <img
           alt="andy"
-          src={`${ASSET_HOST}/assets/icon/andy.jpg`}
+          src={`${ASSET_HOST}assets/icon/andy.jpg`}
           style={{height: "150px", width: "150px", borderRadius: "75px", float: "right"}}
         />
       </div>

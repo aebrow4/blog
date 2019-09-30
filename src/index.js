@@ -9,5 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const App = process.env.REACT_APP_MODE !== 'editor' ? Blog : Editor;
 const Config = process.env.NODE_ENV === 'production' ? Production : Development;
-ReactDOM.render(<App config={new Config()} />, document.getElementById('root'));
+const config = new Config();
+window.app = { config }
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
