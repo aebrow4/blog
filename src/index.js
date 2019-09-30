@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
 import './css/colors.css';
-import App from './App';
-import AppEditor from './app-editor';
+import Blog from './App';
+import Editor from './app-editor';
+import { Development, Production } from './config';
 import registerServiceWorker from './registerServiceWorker';
 
-const Blog = process.env.REACT_APP_MODE !== 'editor' ? App : AppEditor;
-ReactDOM.render(<Blog />, document.getElementById('root'));
+const App = process.env.REACT_APP_MODE !== 'editor' ? Blog : Editor;
+const Config = process.env.NODE_ENV === 'production' ? Production : Development;
+ReactDOM.render(<App config={new Config()} />, document.getElementById('root'));
 registerServiceWorker();
