@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Value } from 'slate';
-import { ASSET_HOST } from './config';
 import './css/App.css';
 import './css/Atoms.css';
 import Header from './components/header/header.js';
@@ -25,6 +24,7 @@ export default class App extends Component {
   }
 
   fetchPosts() {
+    const { ASSET_HOST } = this.props.config;
     const promises = POSTS.map(path =>
       fetch(`${ASSET_HOST}/assets/post/${path}`)
     );
