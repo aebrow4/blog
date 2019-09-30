@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { ASSET_HOST } from '../../config';
 
 export default class Header extends Component {
+
   render() {
+    const { ASSET_HOST } = window.app.config;
     return (
       <header className="g-gray100 mt0 b-purple700 bs-solid bw-3 pt1 pb1 mb4 b-top">
         <div className="content justify-between flex">
@@ -19,7 +20,7 @@ export default class Header extends Component {
               <Link to="/about">
                 <img
                   alt="about"
-                  src={`${ASSET_HOST}/assets/icon/andy-crop.jpg`}
+                  src={`${ASSET_HOST}assets/icon/andy-crop.jpg`}
                   className="icon ml1"
                 />
               </Link>
@@ -28,7 +29,7 @@ export default class Header extends Component {
               <a href="https://www.github.com/aebrow4">
                 <img
                   alt="github"
-                  src={`${ASSET_HOST}/assets/icon/github.svg`}
+                  src={`${ASSET_HOST}assets/icon/github.svg`}
                   className="icon ml1"
                 />
               </a>
@@ -37,7 +38,7 @@ export default class Header extends Component {
               <a href="https://www.linkedin.com/in/andrewebrownaeb0">
                 <img
                   alt="linkedin"
-                  src={`${ASSET_HOST}/assets/icon/linkedin.svg`}
+                  src={`${ASSET_HOST}assets/icon/linkedin.svg`}
                   className="icon ml1"
                 />
               </a>

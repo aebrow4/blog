@@ -24,9 +24,9 @@ export default class App extends Component {
   }
 
   fetchPosts() {
-    const { ASSET_HOST } = this.props.config;
+    const { ASSET_HOST } = window.app.config;
     const promises = POSTS.map(path =>
-      fetch(`${ASSET_HOST}/assets/post/${path}`)
+      fetch(`${ASSET_HOST}assets/post/${path}`)
     );
     Promise.all(promises)
       .then(data => {
