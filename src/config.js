@@ -8,7 +8,7 @@ export class Development extends Base{};
 export class Production extends Base {
   constructor() {
     super();
-    this.ASSET_HOST = ''
+    this.ASSET_HOST = 'http://andrewbrown.news/'
   }
 }
 
