@@ -53,7 +53,7 @@ export default class Carousel extends Component {
     const photo = this.props.photos[this.state.index];
     return (
       <Lightbox onClose={this.props.onClose}>
-        <div className="bgg-black">
+        <div className="g-black">
           <Photo
             url={photo.url}
             alt={photo.alt}
