@@ -6,6 +6,7 @@ import './css/Atoms.css';
 import Header from './components/header/header.js';
 import About from './components/about/about.js';
 import Post from './components/post/post.js';
+import PhotoViewer from './components/photo/photo-viewer.js';
 import { truncatePost, postIdFromTitle } from './util';
 
 // Store the relative paths of the JSON blog posts
@@ -15,8 +16,9 @@ export default class App extends Component {
     super(props);
     this.renderPost = this.renderPost.bind(this);
     this.renderHome = this.renderHome.bind(this);
+    this.setImage = this.setImage.bind(this);
 
-    this.state = { posts: [] };
+    this.state = { posts: [], imageViewer: {} };
   }
 
   componentDidMount() {
@@ -44,25 +46,39 @@ export default class App extends Component {
       });
   }
 
+  setImage(img) {
+    this.setState({ imageViewer: img })
+  }
+
   renderAbout() {
     return <About />;
   }
 
   renderHome() {
     return (
-      <div>
-        {this.state.posts.map(post => (
-          <Post
-            title={post.title}
-            date={post.date}
-            summaryPost={post.summaryPost}
-            photos={post.photos}
-            summaryView
-            readOnly
-            id={post.id}
-            key={post.id}
-          />
-        ))}
+      <div className="flex justify-around" style={{alignItems: "flex-start", }}>
+        <div className="" style={{}}>
+            {this.state.posts.map(post => (
+              <Post
+                title={post.title}
+                date={post.date}
+                summaryPost={post.summaryPost}
+                imageViewer={this.state.imageViewer}
+                summaryView
+                readOnly
+                setImage={this.setImage}
+                id={post.id}
+                key={post.id}
+              />
+            ))}
+          </div>
+          <div className="viewer sticky" style={{top: 0, marginTop: "6.5rem"}}>
+            <PhotoViewer
+              url={`${window.app.config.ASSET_HOST}${this.state.imageViewer.url}`}
+              alt=""
+              caption=""
+            />
+        </div>
       </div>
     );
   }
@@ -76,10 +92,11 @@ export default class App extends Component {
             title={post.title}
             date={post.date}
             post={post.post}
-            photos={post.photos}
+            readOnly
+            imageViewer={this.state.imageViewer}
+            setImage={this.setImage}
             id={post.id}
             key={post.id}
-            readOnly
           />
         )
     );

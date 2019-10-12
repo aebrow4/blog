@@ -1,6 +1,7 @@
 .absolute { position: absolute; }
 .relative {position: relative; }
 .fixed {position: fixed; }
+.sticky {position: sticky; }
 
 .w-full { width: 100%; }  
 .h-full { height: 100%; }  
@@ -28,6 +29,16 @@
 .justify-around { justify-content: space-around; }  
 .justify-between { justify-content: space-between; }  
 .align-center { align-items: center; }  
+
+.grow-1 { flex-grow: 1; }
+.grow-2 { flex-grow: 2; }
+.grow-3 { flex-grow: 3; }
+.grow-4 { flex-grow: 4; }
+.grow-5 { flex-grow: 5; }
+.grow-6 { flex-grow: 6; }
+.grow-7 { flex-grow: 7; }
+.grow-8 { flex-grow: 8; }
+.grow-9 { flex-grow: 9; }
 
 .o-hidden { overflow: hidden; }
 

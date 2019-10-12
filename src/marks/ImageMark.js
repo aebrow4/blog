@@ -8,26 +8,21 @@ const LG_IMG = 'lg';
 export default class ImageMark extends Component {
   constructor() {
     super();
-    this.state = {
-      renderImage: false,
-      lastTouch: new Date(),
-      imageSize: MED_IMG,
-    };
+    this.state = {};
 
-    this.toggleImageSize = this.toggleImageSize.bind(this);
+    this.toggleImage = this.toggleImage.bind(this);
   }
 
-  toggleImageSize(e) {
+  toggleImage(e) {
     e && e.preventDefault();
-    const { imageSize } = this.state;
-    if (imageSize === MED_IMG) {
+    const { renderImage } = this.state;
+    if (renderImage) {
       this.setState({
-        renderImage: true,
-        imageSize: LG_IMG,
+        renderImage: false,
         pageYOffset: window.pageYOffset,
       });
-    } else if (imageSize === LG_IMG) {
-      this.setState({ renderImage: false, imageSize: MED_IMG }, () => {
+    } else {
+      this.setState({ renderImage: true }, () => {
         window.scrollTo(0, this.state.pageYOffset);
       });
     }
@@ -39,8 +34,7 @@ export default class ImageMark extends Component {
       <Photo
         url={`${ASSET_HOST}${this.props.href}`}
         caption={this.props.caption}
-        imageSize={this.state.imageSize}
-        cycleImageSize={this.toggleImageSize}
+        toggleImage={this.toggleImage}
       />
     );
   }
@@ -50,23 +44,13 @@ export default class ImageMark extends Component {
       <span>
         {this.state.renderImage && this.renderImage()}
         <a
-          onClick={e => this.toggleImageSize(e)}
+          onClick={e => this.toggleImage(e)}
           href={this.props.href}
           onMouseEnter={() => {
-            const now = new Date();
-            if (now.getTime() - this.state.lastTouch.getTime() < 25) return;
-            this.setState({
-              renderImage: true,
-              lastTouch: now,
-            });
-          }}
-          onMouseLeave={() => {
-            const now = new Date();
-            if (now.getTime() - this.state.lastTouch.getTime() < 25) return;
-            if (this.state.imageSize === LG_IMG) return;
-            this.setState({
-              renderImage: false,
-              lastTouch: now,
+            this.props.setImage({
+              url: `${this.props.href}`,
+              caption: this.props.caption,
+              cycleImageSize: this.toggleImageSize,
             });
           }}
         >
