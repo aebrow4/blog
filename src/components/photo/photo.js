@@ -14,10 +14,10 @@ export default class Photo extends Component {
         onClose={() => this.props.toggleImage()}
       >
         <div className={"m0a g-trueblack"}>
-          <img className="m0a block" src={src} alt={alt} style={{maxHeight: "90vh"}}/>
+          <img className="m0a block image" src={src} alt={alt} style={{maxHeight: "90vh"}}/>
           {caption && (
             <div>
-              <p className="font-size-threequarter align-center weight-400 c-white mr4 ml4">
+              <p className="font-size-threequarter align-center weight-400 c-white pr1 pl1">
                 {caption}
               </p>
             </div>

@@ -55,6 +55,12 @@ export default class App extends Component {
   }
 
   renderHome() {
+    const { imageViewer } = this.state;
+    let url = null;
+    if (imageViewer.url) {
+      url = `${window.app.config.ASSET_HOST}${imageViewer.url}`
+    }
+    
     return (
       <div className="flex justify-around" style={{alignItems: "flex-start", }}>
         <div className="" style={{}}>
@@ -74,9 +80,9 @@ export default class App extends Component {
           </div>
           <div className="viewer sticky" style={{top: 0, marginTop: "6.5rem"}}>
             <PhotoViewer
-              url={`${window.app.config.ASSET_HOST}${this.state.imageViewer.url}`}
-              alt=""
-              caption=""
+              url={url}
+              alt={imageViewer.alt}
+              caption={imageViewer.caption}
             />
         </div>
       </div>
