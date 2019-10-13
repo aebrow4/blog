@@ -17,14 +17,21 @@ export default class ImageMark extends Component {
     e && e.preventDefault();
     const { renderImage } = this.state;
     if (renderImage) {
-      this.setState({
-        renderImage: false,
-        pageYOffset: window.pageYOffset,
-      });
+      this.setState(
+        {
+          renderImage: false,
+        },
+        () => {
+          window.scrollTo(0, this.state.pageYOffset);
+        }
+      );
     } else {
-      this.setState({ renderImage: true }, () => {
-        window.scrollTo(0, this.state.pageYOffset);
-      });
+      this.setState(
+        { renderImage: true, pageYOffset: window.pageYOffset },
+        () => {
+          window.scrollTo(0, this.state.pageYOffset);
+        }
+      );
     }
   }
 

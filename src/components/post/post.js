@@ -30,6 +30,11 @@ export default class Post extends Component {
   }
 
   render() {
+    const { imageViewer } = this.props;
+    let url = null;
+    if (imageViewer.url) {
+      url = `${window.app.config.ASSET_HOST}${imageViewer.url}`
+    }
     return (
       <div className="mb2">
         <div >
@@ -58,9 +63,9 @@ export default class Post extends Component {
           {!this.props.summaryView && (
             <div className="viewer sticky mt1" style={{top:0}}>
               <PhotoViewer
-                url={`${window.app.config.ASSET_HOST}${this.props.imageViewer.url}`}
-                alt=""
-                caption=""
+                url={url}
+                alt={imageViewer.alt}
+                caption={imageViewer.caption}
               />
             </div>
             )}
