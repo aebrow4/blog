@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 import Photo from '../components/photo/photo';
 
-const MED_IMG = 'med';
-const LG_IMG = 'lg';
-
 export default class ImageMark extends Component {
   constructor() {
     super();

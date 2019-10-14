@@ -78,12 +78,14 @@ export default class App extends Component {
               />
             ))}
           </div>
-          <div className="viewer sticky" style={{top: 0, marginTop: "6.5rem"}}>
+          <div className="viewer sticky">
+            <div style={{top: 0, marginTop: "6.5rem", width: "520px", height: "520px" }}>
             <PhotoViewer
               url={url}
               alt={imageViewer.alt}
               caption={imageViewer.caption}
             />
+            </div>
         </div>
       </div>
     );
