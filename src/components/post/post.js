@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { renderMark } from '../../marks/marks.js';
 import { Link } from 'react-router-dom';
 import { Editor } from 'slate-react';
-import Gallery from '../photo/gallery.js';
 import PhotoViewer from "../photo/photo-viewer.js";
 
 export default class Post extends Component {
@@ -19,7 +18,7 @@ export default class Post extends Component {
   }
 
   renderFullPost() {
-    const { post, setImage, readOnly, imageViewer } = this.props;
+    const { post, setImage, readOnly } = this.props;
     return (
         <Editor
           value={post}
@@ -62,11 +61,13 @@ export default class Post extends Component {
           )}
           {!this.props.summaryView && (
             <div className="viewer sticky mt1" style={{top:0}}>
-              <PhotoViewer
-                url={url}
-                alt={imageViewer.alt}
-                caption={imageViewer.caption}
-              />
+              <div style={{width: "520px", height: "520px" }}>
+                <PhotoViewer
+                  url={url}
+                  alt={imageViewer.alt}
+                  caption={imageViewer.caption}
+                />
+              </div>
             </div>
             )}
           </div>
